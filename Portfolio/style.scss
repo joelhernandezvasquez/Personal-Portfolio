@@ -90,7 +90,7 @@
     {
         grid-area:main-header;
         background:$main-background2;
-        height: 100vh;
+        //height: 100vh;
 
         .nav-container
         {
@@ -101,7 +101,7 @@
             justify-content: space-between;
             background:transparent;
             // border:1px solid red;
-            padding:25px 10px 40px 10px;
+            padding:25px 10px 30px 10px;
 
             .logo-container
             {
@@ -117,8 +117,8 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    width:45px;
-                    height: 45px;
+                    width:40px;
+                    height: 40px;
                     border:2px solid $main-background;
                     border-radius: 50%;
 
@@ -135,7 +135,7 @@
                    color:$main-background;
                    margin-left:10px;
                    font-family: $font-small-heading;
-                   font-size: 1.3rem;
+                   font-size: 1.2rem;
                    font-weight: 600;
                    
                }
@@ -284,8 +284,18 @@
 
         
 
+        .profile-container{
+           
+            display:grid;
+            grid-template-columns: 1fr;
+            grid-template-areas: 
+            "profile"
+            "profile-image";
+            
+        
         .profile
         {
+            grid-area:profile;
             margin-left: 1.5rem;
             .profile-greeting
             {
@@ -299,7 +309,7 @@
             .profile-title
             {
                 color:$main-background;
-                padding:5px 0 25px 0px;
+                padding:5px 0 15px 0px;
                 font-family: $font-heading;
                 font-weight: 600;
                 width:70%;
@@ -314,21 +324,23 @@
 
         .profile-about-me
         {
-         
+            margin-bottom: 80px;
             p
             {
-                width:85%;
-                font-size: 0.9rem;
+                width:72%;
+                font-size: 1rem;
                 line-height: 1.8;
                 color:$color-text;
                 font-family: $font-text;
+              
+                
             }
 
             .btn
             {
                 padding:20px 35px;
                 border-radius:5px;
-                margin:60px 0px;
+                margin:60px 0px 60px 0px;
                 background:$main-background2;
                 color:$main-background;
                 border:1px solid $main-background;
@@ -346,6 +358,33 @@
             }
         }
     }
+
+    .profile-image
+    {
+      grid-area:profile-image;
+
+       .box-image-background
+       {
+           width:100%;
+           height:345px;
+           background:$main-background;
+           position:relative;
+           display:flex;
+           flex-direction: column;
+           align-items: center;
+
+           img{
+               width:230px;
+               height:350px;
+               position: absolute;
+               top:-30px;
+               object-fit: cover;
+               object-position: center;
+           }
+       }
+    }
+
+}
 
         
         
@@ -971,7 +1010,9 @@
         padding:0 2.5rem;
         .main-header
         {
-        .profile
+        
+          
+            .profile
             {
                 margin-left: 0;
                 .profile-title
@@ -1079,32 +1120,63 @@
  @media(min-width:767px)
  {
      .wrapper{
-        padding:0 2.7rem;
+        padding:0 1.5rem;
          .main-header{
             
+            height:100vh;
              .nav-container{
-                padding:30px 10px 120px 10px;
+                padding:30px 10px 120px 0px;
                 
                 .logo{
-                    margin-left:10px;
+                   // margin-left:10px;
                 }
              }
-             .profile
+
+             .profile-container{
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas: 
+                "profile profile-image";
+              
+
+                .profile
              {
-                 margin-left: 2.5rem;
-             
+                 margin-left: 0;
+                 .profile-title{
+                 h1
+                 {
+                 
+                 font-size: 2.5rem;
+                 
+                }
+            }
              .profile-about-me
         {
          
             p
             {
-                width:62%;
-               font-size: 1.2rem;
-               padding:0.5rem 0;
-               
+                
+               font-size: 1.1rem;
+               width:85%;
             }
          }
         }
+        .profile-image
+        {
+            .box-image-background
+       {
+          
+           height:550px;
+           align-items: flex-start;
+           
+           img{
+            
+               top:15%;
+               left:-20px;
+               
+           }
+       }
+        }
+    }
         
      }
      .about-me-container
@@ -1233,12 +1305,83 @@
     .wrapper
     {
         padding:0 10rem;
+
+        .profile-container
+        {
+            max-width: 1000px;
+            
+        }
         .about-me-container{
             max-width: 1000px;
             
         }
     }
 }
+
+@media(min-width:1200px)
+{
+    .wrapper{
+        padding:0 14rem;
+
+        
+    }
+}
+
+@media(min-width:1400px)
+{
+    .wrapper{
+        padding:0 16rem;
+
+        .main-header{
+
+            .profile-container{
+                .profile
+                {
+                  
+                    .profile-title{
+                    h1
+                    {
+                    
+                    font-size: 3.2rem;
+                    
+                   }
+               }
+                .profile-about-me
+           {
+            
+               p
+               {
+                   
+                  font-size: 1.2rem;
+                  width:80%;
+                  line-height: 2.0;
+               }
+            }
+           }
+           .profile-image
+           {
+               .box-image-background
+          {
+             
+              height:550px;
+             
+              
+              img{
+               
+                width:280px;
+                height: 400px;  
+                top:15%;
+                  left:-20px;
+                  
+                  
+              }
+          }
+           }
+       }
+            }
+        }
+    }
+
 
  
 

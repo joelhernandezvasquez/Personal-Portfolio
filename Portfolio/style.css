@@ -73,7 +73,6 @@
   -ms-grid-column: 1;
   grid-area: main-header;
   background: #ffffff;
-  height: 100vh;
 }
 
 .wrapper .main-header .nav-container {
@@ -87,7 +86,7 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   background: transparent;
-  padding: 25px 10px 40px 10px;
+  padding: 25px 10px 30px 10px;
 }
 
 .wrapper .main-header .nav-container .logo-container {
@@ -112,8 +111,8 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   border: 2px solid #095acd;
   border-radius: 50%;
 }
@@ -128,7 +127,7 @@
   color: #095acd;
   margin-left: 10px;
   font-family: "Montserrat", sans-serif;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 
@@ -272,41 +271,56 @@
   display: none;
 }
 
-.wrapper .main-header .profile {
+.wrapper .main-header .profile-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+      grid-template-areas: "profile" "profile-image";
+}
+
+.wrapper .main-header .profile-container .profile {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: profile;
   margin-left: 1.5rem;
 }
 
-.wrapper .main-header .profile .profile-greeting h4 {
+.wrapper .main-header .profile-container .profile .profile-greeting h4 {
   color: #095acd;
   font-family: "Open Sans", sans-serif;
   font-size: 1rem;
 }
 
-.wrapper .main-header .profile .profile-title {
+.wrapper .main-header .profile-container .profile .profile-title {
   color: #095acd;
-  padding: 5px 0 25px 0px;
+  padding: 5px 0 15px 0px;
   font-family: "Oswald", sans-serif;
   font-weight: 600;
   width: 70%;
 }
 
-.wrapper .main-header .profile .profile-title h1 {
+.wrapper .main-header .profile-container .profile .profile-title h1 {
   line-height: 1.4;
   font-size: 2.2rem;
 }
 
-.wrapper .main-header .profile .profile-about-me p {
-  width: 85%;
-  font-size: 0.9rem;
+.wrapper .main-header .profile-container .profile .profile-about-me {
+  margin-bottom: 80px;
+}
+
+.wrapper .main-header .profile-container .profile .profile-about-me p {
+  width: 72%;
+  font-size: 1rem;
   line-height: 1.8;
   color: #98a7b3;
   font-family: "Open Sans", sans-serif;
 }
 
-.wrapper .main-header .profile .profile-about-me .btn {
+.wrapper .main-header .profile-container .profile .profile-about-me .btn {
   padding: 20px 35px;
   border-radius: 5px;
-  margin: 60px 0px;
+  margin: 60px 0px 60px 0px;
   background: #ffffff;
   color: #095acd;
   border: 1px solid #095acd;
@@ -318,10 +332,44 @@
   outline: none;
 }
 
-.wrapper .main-header .profile .profile-about-me .btn:hover {
+.wrapper .main-header .profile-container .profile .profile-about-me .btn:hover {
   color: #ffffff;
   background: #095acd;
   cursor: pointer;
+}
+
+.wrapper .main-header .profile-container .profile-image {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: profile-image;
+}
+
+.wrapper .main-header .profile-container .profile-image .box-image-background {
+  width: 100%;
+  height: 345px;
+  background: #095acd;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper .main-header .profile-container .profile-image .box-image-background img {
+  width: 230px;
+  height: 350px;
+  position: absolute;
+  top: -30px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 
 .wrapper .projects-container {
@@ -926,21 +974,38 @@
 
 @media (min-width: 767px) {
   .wrapper {
-    padding: 0 2.7rem;
+    padding: 0 1.5rem;
+  }
+  .wrapper .main-header {
+    height: 100vh;
   }
   .wrapper .main-header .nav-container {
-    padding: 30px 10px 120px 10px;
+    padding: 30px 10px 120px 0px;
   }
-  .wrapper .main-header .nav-container .logo {
-    margin-left: 10px;
+  .wrapper .main-header .profile-container {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "profile profile-image";
   }
-  .wrapper .main-header .profile {
-    margin-left: 2.5rem;
+  .wrapper .main-header .profile-container .profile {
+    margin-left: 0;
   }
-  .wrapper .main-header .profile .profile-about-me p {
-    width: 62%;
-    font-size: 1.2rem;
-    padding: 0.5rem 0;
+  .wrapper .main-header .profile-container .profile .profile-title h1 {
+    font-size: 2.5rem;
+  }
+  .wrapper .main-header .profile-container .profile .profile-about-me p {
+    font-size: 1.1rem;
+    width: 85%;
+  }
+  .wrapper .main-header .profile-container .profile-image .box-image-background {
+    height: 550px;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .wrapper .main-header .profile-container .profile-image .box-image-background img {
+    top: 15%;
+    left: -20px;
   }
   .wrapper .about-me-container {
     display: -ms-grid;
@@ -1032,8 +1097,40 @@
   .wrapper {
     padding: 0 10rem;
   }
+  .wrapper .profile-container {
+    max-width: 1000px;
+  }
   .wrapper .about-me-container {
     max-width: 1000px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .wrapper {
+    padding: 0 14rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .wrapper {
+    padding: 0 16rem;
+  }
+  .wrapper .main-header .profile-container .profile .profile-title h1 {
+    font-size: 3.2rem;
+  }
+  .wrapper .main-header .profile-container .profile .profile-about-me p {
+    font-size: 1.2rem;
+    width: 80%;
+    line-height: 2.0;
+  }
+  .wrapper .main-header .profile-container .profile-image .box-image-background {
+    height: 550px;
+  }
+  .wrapper .main-header .profile-container .profile-image .box-image-background img {
+    width: 280px;
+    height: 400px;
+    top: 15%;
+    left: -20px;
   }
 }
 /*# sourceMappingURL=style.css.map */
