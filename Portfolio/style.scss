@@ -6,6 +6,7 @@
     box-sizing: border-box;
 }
 
+
 %underlineNew
 {
     width:90px;
@@ -73,7 +74,11 @@
 }
 
 
-
+.container
+{
+  max-width: 1100px;
+  margin:auto;
+  
 .wrapper
 {
     height:100vh;
@@ -85,6 +90,8 @@
     "projects-container"
     "contact-us"
     "main-footer";
+   
+    
 
     .main-header
     {
@@ -172,7 +179,7 @@
                 height:0px;
                 background:$main-background;
                 display:block;
-                transform: translateY(-550px);
+                transform: translateY(-950px);
                 
                 transition:height 0.6s ease-out,
                          transform 0.6s ease-out;
@@ -377,7 +384,7 @@
                width:230px;
                height:350px;
                position: absolute;
-               top:-30px;
+               top:-20px;
                object-fit: cover;
                object-position: center;
            }
@@ -562,7 +569,7 @@
                 font-family: $font-text;
                 font-size: 1rem;
                 color:$color-text;
-                line-height: 1.6;
+                line-height: 1.8;
                 margin-top: 1.2rem;
             }
 
@@ -952,288 +959,323 @@
     }
     }
 }
+}
 
 @media(min-width:479px)
 {
-    .wrapper{
-        .main-header
-        {
-            .nav-container
+    .container{
+        .wrapper{
+            .main-header
             {
-              
-                .backdrop-menu
+                .nav-container
                 {
-                    .menu-container
+                  
+                    .backdrop-menu
                     {
-                        margin:25% 0;
-                        }  
-                    }
-    
-    
-                }
-                
-            
+                        .menu-container
+                        {
+                            margin:25% 0;
+                            }  
+                        }
         
-            .profile
-            {
-                .profile-title
-                {
+        
+                    }
                     
-                  h1
+                
+            
+                .profile
+                {
+                    .profile-title
                     {
-                   
-                    font-size: 3rem;
+                        
+                      h1
+                        {
+                       
+                        font-size: 3rem;
+                    }
+                }
+                
+    
+            .profile-about-me
+            {
+                p
+                {
+                    width:80%;
+                    font-size: 1.1rem;
+                    
                 }
             }
-            
-
-        .profile-about-me
-        {
-            p
-            {
-                width:80%;
-                font-size: 1.1rem;
                 
             }
-        }
-            
-        }
-   }
- 
-}
+       }
+     
+    }
+    }
+    
 }
 
  @media(min-width:600px)
 {
-    .wrapper{
+    
+    .container{
+        padding:0 2rem;
+        .wrapper{
 
-        padding:0 2.5rem;
-        .main-header
-        {
-        
-          
-            .profile
-            {
-                margin-left: 0;
-                .profile-title
-                {
-                    
-                  h1
-                    {
-                   
-                    font-size: 3.5rem;
-                }
-                }
-            }
-        }
-        .projects-container{
-            .project-card
-            {
-               max-width: 405px;
-            }
-        }
-
-        
-        .about-me-container
-    {
-        
-        padding:0 1.3rem;
-        margin-bottom: 5rem;
-        
-
-        h1
-        {
-           text-align: left;
-        }
-        .underline
-        {
-        
-         margin:0;
-         width:15%;
-        }    
-   
-        .about-me-content
-                {
-                    width:90%; 
-                    p
-                    {
-                    
-                        font-size: 1.2rem;
-                    
-                        line-height: 1.7;
-                        margin-top: 1.2rem;
-                    }
-
-                    
-                }
-                .skills-container{
-                    width:80%;
-                }
-       }
-       .contact-us{
-        padding:5rem 1rem;
-
-        .contact-us-wrapper{
-            grid-template-columns: repeat(2,1fr);
-            grid-template-areas: 
-             "contact-us-header contact-us-content";
+            // padding:0 2.5rem;
+             .main-header
+             {
              
-
-             .contact-us-header{
-                 height:auto;
+               
+                 .profile
+                 {
+                     margin-left: 0;
+                     .profile-title
+                     {
+                         
+                       h1
+                         {
+                        
+                         font-size: 3.5rem;
+                     }
+                     }
+                 }
+     
                  
-
-                 .overlay{
-                    height:100%;
-                    justify-content: start;
-
-                    .overlay-content
-                    {
-                        height:auto;
-                        padding:2rem;
-                    }
+             }
+             .projects-container{
+                 .project-card
+                 {
+                    max-width: 405px;
                  }
              }
-
-               .contact-us-content
-               {
-                   padding:0.5rem;
-               }
+     
              
-        }
-     }
-
-     .main-footer{
-         
-        .links-container{
-
-           width:70%;
-           margin:0 auto;
-        }
-     }
-
-       
- }
+             .about-me-container
+         {
+             
+             padding:0 1.3rem;
+             margin-bottom: 5rem;
+             
+     
+             h1
+             {
+                text-align: left;
+             }
+             .underline
+             {
+             
+              margin:0;
+              width:15%;
+             }    
+        
+             .about-me-content
+                     {
+                         width:90%; 
+                         p
+                         {
+                         
+                             font-size: 1.2rem;
+                         
+                             line-height: 1.7;
+                             margin-top: 1.2rem;
+                         }
+     
+                         
+                     }
+                     .skills-container{
+                         width:80%;
+                     }
+            }
+            .contact-us{
+             padding:5rem 1rem;
+             height: 100vh;
+     
+             .contact-us-wrapper{
+                 grid-template-columns: repeat(2,1fr);
+                 grid-template-areas: 
+                  "contact-us-header contact-us-content";
+                  
+     
+                  .contact-us-header{
+                      height:auto;
+                      
+     
+                      .overlay{
+                         height:100%;
+                         justify-content: start;
+     
+                         .overlay-content
+                         {
+                             height:auto;
+                             padding:2rem;
+                         }
+                      }
+                  }
+     
+                    .contact-us-content
+                    {
+                        padding:0.5rem;
+                    }
+                  
+             }
+          }
+     
+          .main-footer{
+              
+             .links-container{
+     
+                width:70%;
+                margin:0 auto;
+             }
+          }
+     
+            
+      }
+    }
+    
     
 }
 
  @media(min-width:767px)
  {
-     .wrapper{
-        padding:0 1.5rem;
-         .main-header{
-            
-            height:100vh;
-             .nav-container{
-                padding:30px 10px 120px 0px;
+     
+    .container{
+        padding:0 2.5rem;
+        .wrapper{
+           
+             .main-header{
                 
-                .logo{
-                   // margin-left:10px;
+                height:100vh;
+                 .nav-container{
+                    padding:30px 10px 120px 0px;
+                    
+                    .logo{
+                       // margin-left:10px;
+                    }
+                 }
+    
+                 .profile-container{
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-areas: 
+                    "profile profile-image";
+                  
+    
+                    .profile
+                 {
+                     margin-left: 0;
+                     .profile-title{
+                     h1
+                     {
+                     
+                     font-size: 2.5rem;
+                     
+                    }
+                }
+                 .profile-about-me
+            {
+             
+                p
+                {
+                    
+                   font-size: 1.1rem;
+                   width:85%;
                 }
              }
-
-             .profile-container{
-                grid-template-columns: 1fr 1fr;
-                grid-template-areas: 
-                "profile profile-image";
-              
-
-                .profile
-             {
-                 margin-left: 0;
-                 .profile-title{
-                 h1
-                 {
-                 
-                 font-size: 2.5rem;
-                 
-                }
             }
-             .profile-about-me
-        {
-         
-            p
+            .profile-image
             {
+                .box-image-background
+           {
+              
+               height:550px;
+               align-items: flex-start;
+               
+               img{
                 
-               font-size: 1.1rem;
-               width:85%;
+                   top:15%;
+                   left:-20px;
+                   
+               }
+           }
             }
+        }
+            
          }
-        }
-        .profile-image
-        {
-            .box-image-background
-       {
-          
-           height:550px;
-           align-items: flex-start;
-           
-           img{
-            
-               top:15%;
-               left:-20px;
+         .about-me-container
+            {
+               display:grid;
+               grid-template-columns: 1.2fr 0.8fr;
+               grid-template-areas:
+               "about-me-content image-profile-container"
+               "skills-container image-profile-container ";
+    
+               .about-me-content
+               {
+                   grid-area:about-me-content;
+               }
+               .image-profile-container
+               {
+                   grid-area:image-profile-container;
+                  margin-top:14rem;
+                  .box-image
+                  {
+                    width: 100%;
+                    height:280px;
+    
+                    img{
+                        width: inherit;
+                        height: inherit;
+                    }
+    
+                    .image-overlay
+                    {
+                        width: inherit;
+                        height: inherit;
+                    }
+                  }
+                   
+               }
+               .skills-container
+               {
+                   grid-area:skills-container;
+                  width:100%;
+                
+               }
+            }
+    
+            .projects-container
+            {
+               .project-cards-container{
+                 display:grid;
+                 grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); 
+                 justify-content: center;
+    
+    
+                 .project-card
+                 {
+                    max-width: 300px;
+                 }
+                 
+    
+               } 
                
-           }
-       }
-        }
-    }
-        
+         
+            }
+  
      }
-     .about-me-container
-        {
-           display:grid;
-           grid-template-columns: 1.2fr 0.8fr;
-           grid-template-areas:
-           "about-me-content image-profile-container"
-           "skills-container image-profile-container ";
-
-           .about-me-content
-           {
-               grid-area:about-me-content;
-           }
-           .image-profile-container
-           {
-               grid-area:image-profile-container;
-              margin-top:14rem;
-              .box-image
-              {
-                width: 100%;
-                height:280px;
-
-                img{
-                    width: inherit;
-                    height: inherit;
-                }
-
-                .image-overlay
-                {
-                    width: inherit;
-                    height: inherit;
-                }
-              }
-               
-           }
-           .skills-container
-           {
-               grid-area:skills-container;
-              width:100%;
-            
-           }
-        }
-
-
-     
- }
+    }
+    
 }
 
 @media(min-width:900px)
 {
-     .wrapper
+     .container{
+        .wrapper
      {
-       padding:0 6rem;
+       //padding:0 6rem;
         .main-header{
              .nav-container{
-
+                padding:50px 10px 120px 0px;
                 .menu-icon{
                     display:none;
                 }
@@ -1271,6 +1313,14 @@
                     
                 }
              }
+
+             .profile-container{
+                 .profile-image{
+                    .box-image-background{
+                        max-width: 400px;
+                    }
+                 }
+             }
          }
 
          .about-me-container
@@ -1297,14 +1347,41 @@
                 
             }
          }
+
+         
+            .projects-container
+            {
+               .project-cards-container{
+                 display:grid;
+                 grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); 
+                 justify-content: center;
+               
+    
+    
+                 .project-card
+                 {
+                    max-width: 400px;
+                 }
+                 
+    
+               } 
+               
+         
+            }
+         
+
+        
      }
+     }
+    
 }
 
 @media(min-width:1024px)
 {
-    .wrapper
+    .container{
+       padding:0 4rem; 
+        .wrapper
     {
-        padding:0 10rem;
 
         .profile-container
         {
@@ -1315,73 +1392,124 @@
             max-width: 1000px;
             
         }
+        .projects-container
+            {
+               .project-cards-container{
+                
+                 grid-template-columns: repeat(auto-fit,minmax(300px,420px)); 
+               
+    
+    
+                 .project-card
+                 {
+                    max-width: 420px;
+                 }
+                 
+    
+               } 
+               
+         
+            }
+
+            .contact-us
+            {
+                .contact-us-wrapper{
+
+                    .contact-us-header
+                    {
+                        .overlay
+                        {
+                            .overlay-content
+                            {
+                                h1
+                                {
+                                  font-size: 3rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
     }
+    }
+    
 }
 
 @media(min-width:1200px)
 {
-    .wrapper{
-        padding:0 14rem;
-
-        
+    .container{
+        .wrapper{
+            // padding:0 12rem;
+     
+             
+         }
     }
+    
+    
 }
 
 @media(min-width:1400px)
 {
-    .wrapper{
-        padding:0 16rem;
-
-        .main-header{
-
-            .profile-container{
-                .profile
+    
+    .container
+    {
+        padding:0 2rem;
+        .wrapper{
+            // padding:0 16rem;
+     
+             .main-header{
+     
+                 .profile-container{
+                     .profile
+                     {
+                       
+                         .profile-title{
+                         h1
+                         {
+                         
+                         font-size: 3.2rem;
+                         
+                        }
+                    }
+                     .profile-about-me
                 {
-                  
-                    .profile-title{
-                    h1
+                 
+                    p
                     {
+                        
+                       font-size: 1.2rem;
+                       width:80%;
+                       line-height: 2.0;
+                    }
+                 }
+                }
+                .profile-image
+                {
+                    .box-image-background
+               {
+                  
+                   height:550px;
+                  
+                   
+                   img{
                     
-                    font-size: 3.2rem;
-                    
+                     width:280px;
+                     height: 400px;  
+                     top:15%;
+                       left:-20px;
+                       
+                       
                    }
                }
-                .profile-about-me
-           {
-            
-               p
-               {
-                   
-                  font-size: 1.2rem;
-                  width:80%;
-                  line-height: 2.0;
-               }
+                }
             }
-           }
-           .profile-image
-           {
-               .box-image-background
-          {
-             
-              height:550px;
-             
-              
-              img{
-               
-                width:280px;
-                height: 400px;  
-                top:15%;
-                  left:-20px;
-                  
-                  
-              }
-          }
-           }
-       }
-            }
-        }
-    }
-
+                 }
+             }
+         }
+     
+    
+}
+    
 
  
 
