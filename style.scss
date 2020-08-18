@@ -1,0 +1,1552 @@
+@import "variables";
+*
+{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+
+%underlineNew
+{
+    width:90px;
+    height:4px;
+    margin:5px; 
+}
+
+.errorFieldState
+{
+    border-bottom: 1px solid red;
+}
+.underline
+{
+    background:$main-background;
+    width:90px;
+    height:4px;
+    margin:10px auto;
+}
+
+.fadeInAnimation
+{
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+ .fadeInAnimation.show
+{
+    opacity: 1;
+}
+
+.fadeInAnimationMenuItems
+{
+    opacity: 0;
+    transition: opacity 1s ease-out 0.5s;
+
+}
+ .fadeInAnimationMenuItems.show
+{
+    opacity: 1;
+  
+}
+
+.inputErrorField
+{
+    border-bottom:1px solid red;
+}
+
+
+
+
+
+
+%section-title
+{
+           text-align: center;
+            padding:90px 0 0 0;
+            margin:0 0 5px 0;
+            font-size:1.8rem;
+            font-family: $font-heading;
+            color:black;
+}
+
+%span-style
+{
+    color:$main-background;
+}
+
+
+.container
+{
+  max-width: 1100px;
+  margin:auto;
+  
+.wrapper
+{
+    height:100vh;
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "main-header"
+    "about-me-container"
+    "projects-container"
+    "contact-us"
+    "main-footer";
+   
+    
+
+    .main-header
+    {
+        grid-area:main-header;
+        background:$main-background2;
+        //height: 100vh;
+
+        .nav-container
+        {
+          
+            
+            display:flex;
+            align-items: center;
+            justify-content: space-between;
+            background:transparent;
+            // border:1px solid red;
+            padding:25px 10px 30px 10px;
+
+            .logo-container
+            {
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                // border:1px solid blue;
+
+               
+
+                .logo
+                {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width:40px;
+                    height: 40px;
+                    border:2px solid $main-background;
+                    border-radius: 50%;
+
+                    h3
+                    {
+                        color:$main-background;
+                        letter-spacing: 2px;
+                        font-family: $font-small-heading;
+                    }
+                }
+
+               #my-name
+               {
+                   color:$main-background;
+                   margin-left:10px;
+                   font-family: $font-small-heading;
+                   font-size: 1.2rem;
+                   font-weight: 600;
+                   
+               }
+            }
+            
+            .menu-icon
+            {
+                width:10%;
+                height:50px;
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+             //border:1px solid black;
+                margin-right: 10px;
+                cursor: pointer;
+                
+                .bar1, .bar2 , .bar3
+                {
+                    width:2rem;
+                    height:2px;
+                    background:$main-background;
+                    margin:4px;
+                    
+                }
+            }
+
+            .backdrop-menu
+            {
+                position:fixed;
+                top:0;
+                left:0;
+                z-index: 10;
+                width:100%;
+                height:0px;
+                background:$main-background;
+                display:block;
+                transform: translateY(-950px);
+                
+                transition:height 0.6s ease-out,
+                         transform 0.6s ease-out;
+                         
+               
+               
+               
+
+                i
+                {
+                    float:right;
+                    margin:25px 20px 0 0;
+                    color:white;
+                }
+
+                .menu-container
+                {
+                    width:100%;
+                    height:80%;
+                    margin:35% 0;
+                   // border:1px solid white;
+                    display: grid;
+                    grid-template-columns:1fr;
+                    grid-template-rows: 50px auto 50px;
+                    grid-template-areas:
+                    "menu-header"
+                    "menu-item" 
+                     "menu-footer";
+                     
+                    .menu-header
+                    {
+                        grid-area:menu-header;
+                        height:50px;
+                        
+                        h2
+                        {
+                            text-align: center;
+                            color:$main-background2;
+                            font-size: 1.4rem;
+                            font-family: $font-heading;
+                            margin-bottom: 0.5rem;
+                           
+                        }
+                    }
+                    .menu-item
+                    {
+                        grid-area:menu-item;
+                        display:flex;
+                        flex-direction: column;
+                        align-items: center;
+                        
+                       
+
+                     .items
+                        {
+                            list-style: none;
+                            margin:1rem 0;
+                            opacity:0;
+
+                            a{
+                                text-decoration: none;
+                                color:$main-background2;
+                                font-family: $font-small-heading;
+                                font-size: 2rem;
+                                
+                            }
+                        }
+                        
+                       
+                    }
+
+                    .menu-footer
+                    {
+                        grid-area: menu-footer;
+                        display:flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        
+
+                        p
+                        {
+                            text-align: center;
+                            color:$main-background2;
+                            font-family: $font-small-heading;
+                            font-size: 1rem;
+                        }
+                       
+                    }
+                    
+                    
+                }
+
+
+            }
+            .backdrop-menu.visible
+            {
+                //display:block;
+                height:100%;
+                transform: translateY(0);
+               
+            }
+
+                .larger-menu-item
+                {
+                    display:none;
+                }
+        }
+
+        
+
+        .profile-container{
+           
+            display:grid;
+            grid-template-columns: 1fr;
+            grid-template-areas: 
+            "profile"
+            "profile-image";
+            
+        
+        .profile
+        {
+            grid-area:profile;
+            margin-left: 1.5rem;
+            .profile-greeting
+            {
+               h4
+               {
+                   color:$main-background;
+                   font-family: $font-text;
+                   font-size: 1rem;
+               }
+            }
+            .profile-title
+            {
+                color:$main-background;
+                padding:5px 0 15px 0px;
+                font-family: $font-heading;
+                font-weight: 600;
+                width:70%;
+                
+
+                h1
+                {
+                line-height: 1.4;
+                font-size: 2.2rem;
+               }
+            }
+
+        .profile-about-me
+        {
+            margin-bottom: 80px;
+            p
+            {
+                width:72%;
+                font-size: 1rem;
+                line-height: 1.8;
+                color:$color-text;
+                font-family: $font-text;
+              
+                
+            }
+
+            .btn
+            {
+                padding:20px 35px;
+                border-radius:5px;
+                margin:60px 0px 60px 0px;
+                background:$main-background2;
+                color:$main-background;
+                border:1px solid $main-background;
+                font-size: 1rem;
+                font-family: $font-small-heading;
+                font-weight: 600;
+                transition: color 0.3s ease-in-out,background 0.3s ease-in-out;
+                outline: none;
+            }
+            .btn:hover
+            {
+                color:$main-background2;
+                background:$main-background;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .profile-image
+    {
+      grid-area:profile-image;
+
+       .box-image-background
+       {
+           width:100%;
+           height:345px;
+           background:$main-background;
+           position:relative;
+           display:flex;
+           flex-direction: column;
+           align-items: center;
+
+           img{
+               width:230px;
+               height:350px;
+               position: absolute;
+               top:-20px;
+               object-fit: cover;
+               object-position: center;
+           }
+       }
+    }
+
+}
+
+        
+        
+    }
+
+    .projects-container
+    {
+        grid-area:projects-container;
+        background:$main-background2;
+        padding:0 15px;
+        background:$primary-color;
+
+
+         span
+         {
+             color:$main-background;
+         }
+        h1
+         {
+            
+           @extend %section-title;
+         }
+
+        
+
+         .project-card
+         {
+             width:95%;
+             margin:3rem auto;
+             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+            //  border:1px solid $main-background;
+             display:grid;
+             grid-template-columns: 1fr;
+             grid-template-areas:
+             "project-card-image"
+             "project-card-name"
+             "project-card-description"
+             "project-card-tools"
+             "project-card-link";
+             
+             
+
+             .project-card-image
+             {
+                 grid-area:project-card-image;
+
+                 img
+                 {
+                     width:100%;
+                 }
+             }
+
+             .project-card-name
+             {
+                 grid-area:project-card-name;
+                 
+                 padding:1.2rem 0 0.5rem 0;
+                 h4
+                 {
+                     text-align: center;
+                     font-family: $font-small-heading;
+                     color:$color-text;
+                     font-size: 0.9rem;
+                     font-weight: 400;
+                 }
+
+                 h2
+                 {
+                     text-align: center;
+                     font-family: $font-heading;
+                     font-size: 1.7rem;
+                     color:black;
+                     font-weight: 700;
+
+                     span
+                    {
+                        color:$main-background;
+                        font-weight: 700;
+                    }
+                 }
+             }
+
+             .project-card-description
+             {
+                 grid-area:project-card-description;
+                width:90%;
+                margin:0 auto;
+                display:flex;
+                flex-direction: column;
+                align-items: center;
+                
+                 p{
+                     font-size: 1rem;
+                     color:$color-text;
+                     font-family: $font-text;
+                     padding:0.3rem 1.2rem;
+                     line-height: 1.5;
+                     text-align: center;
+                 }
+             }
+
+             .project-card-tools
+             {
+                 grid-area:project-card-tools;
+                 padding:1rem 0.3rem 1rem 2.2rem;
+
+                 .tools-menu
+                 {
+                    
+                    display:flex;
+                    align-items: center;
+                    justify-content: space-around;
+
+                    li
+                     {
+                         
+                         font-size: 1rem;
+                         font-family: $font-text;
+                         color:$main-background;
+                         font-weight: 400;
+                         
+                     }
+                 }
+             }
+
+             .project-card-link
+             {
+                 grid-area:project-card-link;
+                 padding:10px 0;
+                 display:flex;
+                 align-items: center;
+                 justify-content: flex-end;
+
+                 a
+                 {
+                     margin:0 1rem;
+                 }
+
+                 i
+                 {
+                     color:$color-text;
+                 }
+                 i:hover
+                 {
+                     color:$main-background;
+                 }
+             }
+         }
+
+
+        
+    }
+    .about-me-container
+    {
+        grid-area:about-me-container;
+        background:$main-background2;
+        padding:0 1.3rem;
+        margin-bottom: 5rem;
+        
+
+        h1
+        {
+           @extend %section-title; 
+        }
+        span
+        {
+            @extend %span-style;
+        }
+
+        .about-me-content
+        {
+            
+            p
+            {
+                font-family: $font-text;
+                font-size: 1rem;
+                color:$color-text;
+                line-height: 1.8;
+                margin-top: 1.2rem;
+            }
+
+            
+        }
+        .about-me-content p:nth-of-type(1)
+        {
+            padding-top:1rem;
+        }
+        
+
+        .skills-container
+        {
+           
+           
+           .skills-menu
+           {
+            
+            display:grid;
+            grid-template-columns: 1fr 1fr;
+            
+            li
+           {
+              list-style-type:none; 
+              color:$color-text;
+              font-family: $font-text;
+              font-size: 0.9rem;
+              margin:0.7rem;
+              
+           }
+
+           i
+           {
+               font-size: 10px;
+               color:$main-background;
+               padding-right: 0.5rem;
+           }
+        }
+           
+        }
+
+    
+       .image-profile-container
+       {
+           margin-top: 4rem;
+         .box-image
+           {
+               width: 260px;
+               height:260px;
+               border:2px solid $main-background;
+               margin:0 auto;
+               border-radius:5px;
+               position: relative;
+
+               img{
+                  position:absolute;
+                  top:-20px;
+                  left:-15px;
+                   width: 100%;
+                  height:100%;
+                  border-radius: 5px;
+                  object-fit: cover; 
+                  object-position: center;
+               }
+               
+            
+               .image-overlay
+               {
+                   position: absolute;
+                   top:-20px;
+                   left:-15px;
+                    width: 100%;
+                   height:100%;
+                   //border-radius: 5px;
+                   background:$main-background;
+                   opacity:0.5;
+                   cursor: pointer;
+                   transition:background 0.2s ease-in;
+               }
+               .image-overlay:hover
+               {
+                   background:none;
+               }
+
+               
+           }
+       }
+    }
+    .contact-us
+    {
+        grid-area:contact-us;
+        background:$contact-bg;
+        padding:4rem 1rem;
+
+        .contact-us-wrapper
+        {
+            display:grid;
+            grid-template-columns: 1fr;
+            grid-template-areas: 
+             "contact-us-header"
+             "contact-us-content";
+             margin:auto;
+
+             .contact-us-header
+             {
+                 grid-area:contact-us-header;
+                 background:url("images/top-view-of-people-at-the-meeting-3184287.jpg");
+                 background-position: center;
+                 background-size: cover;
+                 background-repeat: no-repeat;
+                 height:400px;
+                 position: relative;
+
+                 .overlay{
+                     position: relative;
+                     top:0;
+                     left:0;
+                    background:$main-background;
+                    height:inherit;
+                    opacity: 0.9;
+                    display:flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                   
+                    .overlay-content{
+                      height:300px;
+                      padding:1rem 2rem;
+
+                      h1
+                      {
+                          color:$main-background2;
+                          font-size: 2rem;
+                          font-family: $font-heading;
+                          font-weight: 700;
+                      }
+                      p
+                      {
+                          color:$main-background2;
+                          font-size: 1.1rem;
+                          font-family: $font-text;
+                          margin:1rem 0;
+                          line-height: 1.7;
+
+                      }
+                      .divider
+                      {
+                          @extend %underlineNew;
+                          background:$main-background2;
+                          border-radius: 5px;
+                      }
+                    }
+                   
+                 }
+             }
+
+             .contact-us-content
+             {
+                 grid-area: contact-us-content;
+                 background:$main-background2;
+                 box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+                 
+                
+                 .box-input
+                 {
+                     display:flex;
+                     flex-direction: column;
+                     padding:0.8rem;
+                     
+
+
+
+                     label
+                     {
+                         color:$color-text;
+                         font-size: 0.7rem;
+                         font-family:$font-small-heading;
+                         font-weight: bold;
+                     }
+
+                     input
+                     {
+                         border:none;
+                         border-bottom: 0.5px solid $color-text;
+                         margin-left:10px;
+                         font-size: 0.8rem;
+                         color:$color-text;
+                         font-family:$font-text;
+                         padding-bottom: 0.8rem;
+                         transition:border-bottom 0.2s ease-in;
+                     }
+                     input:focus,input:hover
+                     {
+                        outline:none;
+                         //border-bottom: 1px solid $main-background;
+                     }
+                    
+
+                     textarea
+                     {
+                        border: 1px solid $color-text;
+                        height: 130px;
+                        width:95%;
+                        margin:0.5rem auto;
+                        border-radius: 5px;
+                        color:$color-text;
+                     }
+                     textarea:focus,textarea:hover
+                     {
+                         outline:none;
+                         border:1px solid $main-background;
+                     }
+
+                 }
+                 .box-input *
+                 {
+                     margin:0.5rem 0;
+                 }
+
+                 .btn-container
+                 {
+                   
+                    display:flex;
+                    align-items: center;
+                    justify-content: center;
+                    .btn-submit
+                    {
+                        
+                       border:none;
+                        background:$main-background;
+                        color:$main-background2;
+                        padding:0.8rem 8rem;
+                        margin:1rem 0 3rem 0;
+                        font-size: 0.8rem;
+                        font-family: $font-small-heading;
+                        border-radius:5px;
+                        outline: none;
+                        text-transform: uppercase;
+                        
+   
+                    }
+                 }
+
+                 .error-form
+                 {
+                    display:none;
+                    p
+                    {
+                        color:red;
+                        font-family: $font-small-heading;
+                        font-size: 1rem;
+                        padding:1rem;
+                        text-align: center;
+
+                    }
+                    i
+                     {
+                         color:red;
+                         margin-right: 2px;
+                     }
+                 }
+                 .error-form.visible
+                 {
+                     display:block;
+                 }
+
+                 .backdrop-form-submited
+                 {
+                     
+                    width:100%;
+                    height:100%;
+                    position:fixed;
+                    top:0;
+                    left:0;
+                    right:0;
+                    bottom:0;
+                    background:rgba(0, 0, 0, 0.75);
+                    z-index: 1;
+                    display:none;
+                 }
+                 .backdrop-form-submited.visible{
+                     display:block;
+                 }
+
+                 .succesfullMessageModal
+                 {
+                     width:90%;
+                     height:120px;
+                     background:$main-background2;
+                     position:fixed;
+                     top:0;
+                     left:20px;
+                     z-index: 2;
+                     border-radius: 2px;
+                     display:none;
+                     opacity:0;
+
+                     .modal-header
+                     {
+                         padding:1.2rem;
+                         background:$main-background;
+                     }
+                     p
+                     {
+                         font-size: 1.1rem;
+                         font-family:$font-heading;
+                         color:black;
+                         font-weight: bold;
+                         padding:1.5rem 1rem;
+
+                         i
+                         {
+                             margin-left:5px;
+                         }
+                     }
+                 }
+                 .succesfullMessageModal.visible
+                 {
+                     display:block;
+                 }
+
+                 
+             }
+
+
+        }
+
+
+    }
+    .main-footer
+    {
+        grid-area:main-footer;
+        
+        
+        .links-container
+        {
+            padding:2rem 0;
+            display:flex;
+            align-content: center;
+            justify-content: space-around;
+            
+            a{
+               text-decoration: none;
+               
+           div{
+               width:70px;
+               height:70px;
+               border-radius: 50%;
+               display:flex;
+               align-items: center;
+               justify-content: center;
+               background:$main-background;
+               
+                
+               i
+            {
+                color:white;
+             
+        }
+        }
+    }
+    a:hover
+    {
+       cursor: pointer; 
+      
+      /*  div
+       {
+           background:$main-background2;
+           
+
+           i{
+               color:$main-background;
+           }
+       } */
+    }
+    }
+
+    .copyright-container
+    {
+        p
+        {
+            text-align: center;
+            color:$main-background;
+            font-size: 1rem;
+            font-family: $font-heading;
+            padding:0.5rem 0 1rem 0;
+        }
+    }
+    }
+}
+}
+
+@media(min-width:479px)
+{
+    .container{
+        .wrapper{
+            .main-header
+            {
+                .nav-container
+                {
+                  
+                    .backdrop-menu
+                    {
+                        .menu-container
+                        {
+                            margin:25% 0;
+                            }  
+                        }
+        
+        
+                    }
+                    
+                
+            
+                .profile
+                {
+                    .profile-title
+                    {
+                        
+                      h1
+                        {
+                       
+                        font-size: 3rem;
+                    }
+                }
+                
+    
+            .profile-about-me
+            {
+                p
+                {
+                    width:80%;
+                    font-size: 1.1rem;
+                    
+                }
+            }
+                
+            }
+       }
+     
+    }
+    }
+    
+}
+
+ @media(min-width:600px)
+{
+    
+    .container{
+        padding:0 2rem;
+        .wrapper{
+
+            // padding:0 2.5rem;
+             .main-header
+             {
+             
+               
+                 .profile
+                 {
+                     margin-left: 0;
+                     .profile-title
+                     {
+                         
+                       h1
+                         {
+                        
+                         font-size: 3.5rem;
+                     }
+                     }
+                 }
+     
+                 
+             }
+             .projects-container{
+                 .project-card
+                 {
+                    max-width: 405px;
+                 }
+             }
+     
+             
+             .about-me-container
+         {
+             
+             padding:0 1.3rem;
+             margin-bottom: 5rem;
+             
+     
+             h1
+             {
+                text-align: left;
+             }
+             .underline
+             {
+             
+              margin:0;
+              width:15%;
+             }    
+        
+             .about-me-content
+                     {
+                         width:90%; 
+                         p
+                         {
+                         
+                             font-size: 1.2rem;
+                         
+                             line-height: 1.7;
+                             margin-top: 1.2rem;
+                         }
+     
+                         
+                     }
+                     .skills-container{
+                         width:80%;
+                     }
+            }
+            .contact-us{
+             padding:5rem 1rem;
+             height: 100vh;
+     
+             .contact-us-wrapper{
+                 grid-template-columns: repeat(2,1fr);
+                 grid-template-areas: 
+                  "contact-us-header contact-us-content";
+                  
+     
+                  .contact-us-header{
+                      height:auto;
+                      
+     
+                      .overlay{
+                         height:100%;
+                         justify-content: start;
+     
+                         .overlay-content
+                         {
+                             height:auto;
+                             padding:2rem;
+                         }
+                      }
+                  }
+     
+                    .contact-us-content
+                    {
+                        padding:0.5rem;
+                    }
+                  
+             }
+          }
+     
+          .main-footer{
+              
+             .links-container{
+     
+                width:70%;
+                margin:0 auto;
+             }
+          }
+     
+            
+      }
+    }
+    
+    
+}
+
+ @media(min-width:767px)
+ {
+     
+    .container{
+        padding:0 2.5rem;
+        .wrapper{
+           
+             .main-header{
+                
+                height:100vh;
+                 .nav-container{
+                    padding:30px 10px 120px 0px;
+                    
+                    .logo{
+                       // margin-left:10px;
+                    }
+                 }
+    
+                 .profile-container{
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-areas: 
+                    "profile profile-image";
+                  
+    
+                    .profile
+                 {
+                     margin-left: 0;
+                     .profile-title{
+                     h1
+                     {
+                     
+                     font-size: 2.5rem;
+                     
+                    }
+                }
+                 .profile-about-me
+            {
+             
+                p
+                {
+                    
+                   font-size: 1.1rem;
+                   width:85%;
+                }
+             }
+            }
+            .profile-image
+            {
+                .box-image-background
+           {
+              
+               height:550px;
+               align-items: flex-start;
+               
+               img{
+                
+                   top:15%;
+                   left:-20px;
+                   
+               }
+           }
+            }
+        }
+            
+         }
+         .about-me-container
+            {
+               display:grid;
+               grid-template-columns: 1.2fr 0.8fr;
+               grid-template-areas:
+               "about-me-content image-profile-container"
+               "skills-container image-profile-container ";
+    
+               .about-me-content
+               {
+                   grid-area:about-me-content;
+               }
+               .image-profile-container
+               {
+                   grid-area:image-profile-container;
+                  margin-top:14rem;
+                  .box-image
+                  {
+                    width: 100%;
+                    height:280px;
+    
+                    img{
+                        width: inherit;
+                        height: inherit;
+                    }
+    
+                    .image-overlay
+                    {
+                        width: inherit;
+                        height: inherit;
+                    }
+                  }
+                   
+               }
+               .skills-container
+               {
+                   grid-area:skills-container;
+                  width:100%;
+                
+               }
+            }
+    
+          
+            .projects-container
+        {
+            
+           
+            .project-cards-container{
+                display:grid;
+                grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); 
+                justify-content: center;
+                grid-gap:10px;
+                padding:5rem 0;
+              
+              
+   
+   
+                .project-card
+                {
+                    margin:1rem auto;
+                   width:300px;
+              
+             .project-card-name
+             {
+                 padding:1.2rem 0 0 0;
+                 h2
+                 {
+                     
+                     font-size: 1.5rem;
+                 }
+             }
+
+             .project-card-description
+             {
+                
+                
+                 p{
+                     font-size: 0.8rem;
+                  
+                 }
+             }
+
+             .project-card-tools
+             {
+
+                 padding:1rem 0.3rem 0rem 2.2rem;
+
+                 .tools-menu
+                 {
+                    
+
+                    li
+                     {
+                         
+                         font-size: 0.8rem;
+                         
+                     }
+                 }
+             }
+
+             
+                
+         
+             
+
+             
+
+             
+
+             
+
+             
+         }
+   
+              } 
+         
+
+
+        
+    
+
+            .contact-us
+            {
+                height: 100vh;
+            }
+  
+     }
+    }
+    
+}
+
+@media(min-width:900px)
+{
+     .container{
+        .wrapper
+     {
+       //padding:0 6rem;
+        .main-header{
+             .nav-container{
+                padding:50px 10px 120px 0px;
+                .menu-icon{
+                    display:none;
+                }
+
+                .larger-menu-item
+                {
+                    width:40%;
+                    display:flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    //border:1px solid red;
+                    
+                    .items
+                      {
+                          list-style-type: none;
+
+                          a{
+                              text-decoration:none;
+                               color:$main-background;
+                                font-family: $font-heading;
+                                font-size: 1.3rem;
+                                font-weight: 300;
+                                padding:1rem;
+                          }
+                          a:hover
+                          {
+                            font-weight: 700;
+                            cursor: pointer;
+                          }
+                      }
+
+                
+                  
+                   
+                    
+                }
+             }
+
+             .profile-container{
+                 .profile-image{
+                    .box-image-background{
+                        max-width: 400px;
+                    }
+                 }
+             }
+         }
+
+         .about-me-container
+         {
+            .image-profile-container
+            {
+                
+               .box-image
+               {
+                 max-width: 300px;
+                 height:300px;
+ 
+                 img{
+                     width: inherit;
+                     height: inherit;
+                 }
+ 
+                 .image-overlay
+                 {
+                     width: inherit;
+                     height: inherit;
+                 }
+               }
+                
+            }
+         }
+
+         
+        
+         
+
+        
+     }
+     }
+    
+}
+
+@media(min-width:1024px)
+{
+    .container{
+       padding:0 2rem; 
+        .wrapper
+    {
+
+        .profile-container
+        {
+            max-width: 1000px;
+            
+        }
+        .about-me-container{
+            max-width: 1000px;
+            
+        }
+        
+
+            .contact-us
+            {
+                .contact-us-wrapper{
+                  max-width: 864px;
+                  height:600px;
+                    .contact-us-header
+                    {
+                        .overlay
+                        {
+                            .overlay-content
+                            {
+                                h1
+                                {
+                                  font-size: 2.5rem;
+                                }
+                                p{
+                                    font-size: 1.2rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+    }
+    }
+    
+}
+
+@media(min-width:1200px)
+{
+    .container{
+        .wrapper{
+            // padding:0 12rem;
+     
+             
+         }
+    }
+    
+    
+}
+
+@media(min-width:1400px)
+{
+    
+    .container
+    {
+        padding:0 1rem;
+        .wrapper{
+            // padding:0 16rem;
+     
+             .main-header{
+     
+                 .profile-container{
+                     .profile
+                     {
+                       
+                         .profile-title{
+                         h1
+                         {
+                         
+                         font-size: 3.2rem;
+                         
+                        }
+                    }
+                     .profile-about-me
+                {
+                 
+                    p
+                    {
+                        
+                       font-size: 1.2rem;
+                       width:80%;
+                       line-height: 2.0;
+                    }
+                 }
+                }
+                .profile-image
+                {
+                    .box-image-background
+               {
+                  
+                   height:550px;
+                  
+                   
+                   img{
+                    
+                     width:280px;
+                     height: 400px;  
+                     top:15%;
+                       left:-20px;
+                       
+                       
+                   }
+               }
+                }
+            }
+                 }
+             }
+         }
+     
+    
+}
+    
+
+ 
+
+
+ }
